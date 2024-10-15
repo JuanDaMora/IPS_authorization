@@ -18,27 +18,27 @@ public class CityController {
     private final CityServiceImpl cityService;
 
     @GetMapping("{id}")
-    public ResponseEntity<City> getDepartment(@PathVariable Integer id) {
+    public ResponseEntity<City> getCity(@PathVariable Integer id) {
         return ResponseEntity.ok(cityService.getCityById(id));
     }
 
     @GetMapping()
-    public ResponseEntity<List<City>> getAllDepartments() {
+    public ResponseEntity<List<City>> getAllCitys() {
         return ResponseEntity.ok(cityService.getAllCitys());
     }
 
     @PostMapping("create")
-    public ResponseEntity<City> createDepartment(@RequestBody CityRequest cityRequest) {
+    public ResponseEntity<City> createCity(@RequestBody CityRequest cityRequest) {
         return ResponseEntity.ok(cityService.addCity(cityRequest));
     }
 
     @PutMapping("update/{id}")
-    public ResponseEntity<City> editDepartment(@PathVariable Integer id, @RequestBody CityRequest cityRequest) {
+    public ResponseEntity<City> editCity(@PathVariable Integer id, @RequestBody CityRequest cityRequest) {
         return ResponseEntity.ok(cityService.updateCity(cityRequest, id));
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<Boolean> deleteDepartment(@PathVariable Integer id) {
+    public ResponseEntity<Boolean> deleteCity(@PathVariable Integer id) {
         return ResponseEntity.ok(cityService.deleteCity(id));
     }
 }
