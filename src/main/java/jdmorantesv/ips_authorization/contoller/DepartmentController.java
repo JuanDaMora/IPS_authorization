@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/department")
 @RequiredArgsConstructor
-public class DepartmenController {
+public class DepartmentController {
 
     private final DepartmentService departmentService;
 
