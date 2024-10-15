@@ -37,6 +37,7 @@ public class CityServiceImpl implements ICityService {
     public City addCity(CityRequest cityRequest) {
         City city = new City();
         city.setName(cityRequest.getName());
+        city.setIdDepartment(cityRequest.getIdDepartment());
         cityRepository.save(city);
         return city;
     }
@@ -49,6 +50,7 @@ public class CityServiceImpl implements ICityService {
             City city = optionalCity.get();
             // Actualizar los campos necesarios
             city.setName(cityRequest.getName());
+            city.setIdDepartment(cityRequest.getIdDepartment());
             // Guardar los cambios
             cityRepository.save(city);
             return city;
