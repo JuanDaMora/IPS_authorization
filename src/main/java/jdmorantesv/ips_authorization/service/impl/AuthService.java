@@ -51,7 +51,7 @@ public class AuthService {
                 .last_name(request.getLast_name())
                 .age(request.getAge())
                 .created_at(new Date())
-                .id_address(request.getId_address())
+                .id_address(Long.valueOf(request.getId_address()))
                 .role(Role.USER)
                 .build();
         userRepository.save(user);

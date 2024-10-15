@@ -21,13 +21,14 @@ import java.util.List;
 @Table(name="user", uniqueConstraints = {@UniqueConstraint(columnNames= {"username"})})
 public class User implements UserDetails {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer Id;
     @Column(nullable = false)
-    Integer id_address;
+    Long id_address;
     @Column(nullable = false)
     String first_name;
     String last_name;
+
     @Column(nullable = false)
     String age;
     @Column(nullable = false)
